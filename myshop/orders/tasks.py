@@ -12,8 +12,8 @@ def order_created(order_id):
     order = Order.objects.get(id=order_id)
     subject = f"Номер заказа {order.id}"
     message = f"Дорогой {order.first_name},\n\n" \
-              f"Вы успешно оформили заказ." \
-              f"ID вашего заказа: {order.id}."
+              f"Вы успешно оформили заказ. " \
+              f"ID вашего заказа: {order.id}. "
     mail_sent = send_mail(subject, message, 'admin@myshop.com',
-                          ['order.email'])
+                          [order.email])
     return mail_sent
