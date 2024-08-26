@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc7e33e2-7c96-4f7d-b9d3-fdbfe2441aee" name="Changes" comment="8">
-      <change afterPath="$PROJECT_DIR$/myshop/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshop/payment/webhooks.py" afterDir="false" />
+    <list default="true" id="dc7e33e2-7c96-4f7d-b9d3-fdbfe2441aee" name="Changes" comment="9">
+      <change afterPath="$PROJECT_DIR$/myshop/orders/templates/admin/orders/order/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshop/orders/templates/orders/order/pdf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshop/payment/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshop/shop/static/css/pdf.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshop/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/cart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myshop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myshop/myshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/myshop/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myshop/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshop/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshop/payment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/payment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshop/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshop/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshop/payment/webhooks.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/payment/webhooks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +188,39 @@
       <option name="project" value="LOCAL" />
       <updated>1723569419466</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="8">
+      <option name="closed" value="true" />
+      <created>1723831563435</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1723831563435</updated>
+    </task>
+    <task id="LOCAL-00017" summary="8">
+      <option name="closed" value="true" />
+      <created>1723831578386</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1723831578386</updated>
+    </task>
+    <task id="LOCAL-00018" summary="8">
+      <option name="closed" value="true" />
+      <created>1723831593878</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1723831593878</updated>
+    </task>
+    <task id="LOCAL-00019" summary="9">
+      <option name="closed" value="true" />
+      <created>1723831639753</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1723831639753</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,6 +244,7 @@
     <MESSAGE value="6" />
     <MESSAGE value="7" />
     <MESSAGE value="8" />
-    <option name="LAST_COMMIT_MESSAGE" value="8" />
+    <MESSAGE value="9" />
+    <option name="LAST_COMMIT_MESSAGE" value="9" />
   </component>
 </project>
