@@ -17,7 +17,10 @@ def payment_completed(order_id):
     # создать электронное письмо для выставления счета
     subject = f"Мой магазин - номер счета-фактуры. {order.id}"
     message = 'Пожалуйста, ознакомьтесь с приложенным счетом-фактурой за вашу недавнюю покупку.'
-    email = EmailMessage(subject, message, [order.email])
+    email = EmailMessage(subject,
+                         message,
+                         'admin@myshop.com',
+                         [order.email])
 
     # Сгенерировать PDF:
     html = render_to_string('orders/order/pdf.html', {'order': order})

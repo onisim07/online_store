@@ -119,15 +119,23 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 CART_SESSION_ID = 'cart'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'onisimignatenkov19@gmail.com'
+# EMAIL_HOST_PASSWORD = 'ljjw fvht zunz tbwn'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Настроечные параметры Stripe:
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51PnMStJyxMjalshqpil7v99tFk0AfA4E1rJcDDkL8v9v8i65v1elQ860ziAVsbNzWzZhlL9otNosnhwVb1UburpD00bgfVcthI' # Публикуемый ключ
 STRIPE_SECRET_KEY = 'sk_test_51PnMStJyxMjalshqnaQWjCuzbmTkr0COAybMgnrpieybN6HFuqO8UkZUvQosAHCW69bMmbtQUty7KcualIaZ1HMz00DDK7U3CZ' # Секретный ключ
 STRIPE_API_VERSION = '2022-08-01'
-
 STRIPE_WEBHOOK_SECRET = 'whsec_f0462d8a2a13cf3e665cef406a5d3bc624f637e263f8ce1e10f9d12b4ef958a7'
 
 
 STATIC_ROOT = BASE_DIR / 'static'
+
+
+
