@@ -1,6 +1,9 @@
 from django.db import models
 from django.conf import settings
 from shop.models import Product
+from decimal import Decimal
+from django.core.validators import MinValueValidator, MaxValueValidator
+from coupons.models import Coupon
 
 
 class Order(models.Model):
@@ -15,6 +18,15 @@ class Order(models.Model):
     paid = models.BooleanField(default=False)   # paid - оплаченный
     stripe_id = models.CharField(max_length=250, blank=True)
 
+    coupon = models.ForeignKey(Coupon,
+                               related_name='orders',
+                               null=True,
+                               blank=True,
+                               on_delete=models.SET_NULL)
+    discount = models.IntegerField(default=0,
+                                   validators=[MinValueValidator(0),
+                                               MaxValueValidator(100)])
+
     class Meta:
         ordering = ['-created']
         indexes = [
@@ -25,8 +37,20 @@ class Order(models.Model):
         return f'Заказ {self.id}'
 
     def get_total_cost(self):
-        '''Получает общую стоимость товаров в заказе'''
+        '''Получает общую стоимость товаров в заказе с учётом скидки'''
+        total_cost = self.get_total_cost_before_discount()
+        return total_cost - self.get_discount()
+
+    def get_total_cost_before_discount(self):
+        '''Общая стоимость всех товаров до скидки'''
         return sum(item.get_cost() for item in self.items.all())
+
+    def get_discount(self):
+        '''Скидка (не в процентах)'''
+        total_cost = self.get_total_cost_before_discount()
+        if self.discount:
+            return total_cost * (self.discount / Decimal(100))
+        return Decimal(0)
 
     def get_stripe_url(self):
         if not self.stripe_id:
@@ -39,6 +63,8 @@ class Order(models.Model):
             # Путь Stripe для настоящих платежей:
             path = '/'
         return f"https://dashboard.stripe.com{path}payments/{self.stripe_id}"
+
+
 
 
 class OrderItem(models.Model):
