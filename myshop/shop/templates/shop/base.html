@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <html lang="ru">
 <head>
@@ -5,24 +6,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}Мой магазин{% endblock %}</title>
+    <title>{% block title %}{% trans "Мой магазин" %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
     <div id="header">
-        <a href="/" class="logo">Мой магазин</a>
+        <a href="/" class="logo">{% trans "Мой магазин" %}</a>
     </div>
     <div id="subheader">
         <div class="cart">
             {% with total_items=cart|length %}
                 {% if total_items > 0 %}
-                    Ваша корзина:
+                    {% trans "Ваша корзина" %}:
                     <a href="{% url 'cart:cart_detail' %}">
-                        {{ total_items }} {{ string }}
-                        {{ cart.get_total_price }}&#x20bd;
+                        {% blocktrans with total=cart.get_total_price count items=total_items %}
+                            {{ items }} {{ string }}, {{ total }}&#x20bd;
+                        {% plural %}
+                            {{ items }} {{ string }}, {{ total }}&#x20bd;
+                        {% endblocktrans %}
                     </a>
                 {% elif not order %}
-                    Ваша корзина пуста.
+                    {% trans "Ваша корзина пуста." %}
                 {% endif %}
             {% endwith %}
         </div>
